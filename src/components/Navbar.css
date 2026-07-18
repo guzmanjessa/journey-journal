@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.navbar {
+  width: 100%;
+  padding: 30px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+
+/* Logo */
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #2d2d2d;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Elegant underline hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0%;
+  height: 1px;
+  background: #333;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #000;
+}

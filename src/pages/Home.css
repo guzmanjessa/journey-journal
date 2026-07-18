@@ -1,0 +1,66 @@
+.hero{
+
+height:90vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.4),
+rgba(0,0,0,0.4)
+),
+url("/travel.jpg");
+
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+
+
+.hero h1{
+
+font-size:70px;
+
+font-family:serif;
+
+.h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+button{
+
+padding:12px 30px;
+
+margin:15px;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}

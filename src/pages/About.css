@@ -1,0 +1,52 @@
+.blog-page {
+  padding: 80px 10%;
+}
+
+.blog-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.blog-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  margin-bottom: 60px;
+}
+
+.blog-card {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.blog-card img {
+  width: 500px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.blog-info {
+  flex: 1;
+}
+
+.blog-info h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.blog-info p {
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #555;
+}
+
+.blog-info button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
