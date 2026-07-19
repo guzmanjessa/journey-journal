@@ -24,7 +24,7 @@ function App() {
           <Route path="/switzerland" element={<Switzerland />} />
           <Route path="/japan" element={<Japan />} />
           <Route path="/korea" element={<Korea />} />
-          <Route path="/ph" element={<Ph />} />
+          <Route path="/philippines" element={<Ph />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
