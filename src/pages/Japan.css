@@ -1,63 +1,155 @@
+/* ===========================
+   JAPAN BLOG PAGE
+=========================== */
+
 .japan-page {
-  max-width: 700px;
-  margin: 70px auto;
-  padding: 0;
+  width: min(700px, 92%);
+  margin: clamp(40px, 6vw, 70px) auto;
 }
 
 .japan-page h1 {
   font-family: "Playfair Display", serif;
-  font-size: 38px;
+  font-size: clamp(2rem, 5vw, 38px);
   font-weight: 600;
   text-transform: uppercase;
+  color: #2d2d2d;
+  line-height: 1.2;
   margin-bottom: 25px;
 }
 
 .main-image {
   width: 100%;
   display: block;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .caption {
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 0.85rem;
   color: #777;
   font-style: italic;
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 36px;
 }
 
 .section-title {
   font-family: "Playfair Display", serif;
-  font-size: 24px;
+  font-size: clamp(1.5rem, 3vw, 24px);
   font-weight: 600;
   text-transform: uppercase;
+  color: #2d2d2d;
   margin-bottom: 18px;
 }
 
 .paragraph {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: clamp(1rem, 2vw, 16px);
   line-height: 1.9;
   color: #555;
   text-align: justify;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .back-btn {
-  margin-top: 30px;
-  padding: 10px 25px;
+  margin-top: 35px;
+  padding: 12px 28px;
   border: none;
   border-radius: 30px;
   background: #333;
-  color: white;
+  color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .back-btn:hover {
   background: #555;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width: 992px) {
+
+  .japan-page {
+    width: 94%;
+  }
+
+  .paragraph {
+    text-align: left;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .japan-page {
+    width: 92%;
+    margin: 45px auto;
+  }
+
+  .japan-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .caption {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    margin-top: 10px;
+  }
+
+  .paragraph {
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .back-btn {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    margin: 35px auto 0;
+  }
+}
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width: 480px) {
+
+  .japan-page {
+    width: 90%;
+    margin: 35px auto;
+  }
+
+  .main-image {
+    border-radius: 12px;
+  }
+
+  .caption {
+    font-size: 0.8rem;
+  }
+
+  .paragraph {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .back-btn {
+    width: 100%;
+    max-width: none;
+    padding: 14px;
+  }
 }

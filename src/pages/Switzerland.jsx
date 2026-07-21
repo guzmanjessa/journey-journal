@@ -5,7 +5,7 @@ import switzerland from "../assets/switzerland.jpg";
 
 function Switzerland() {
   return (
-    <section className="switzerland-page">
+    <section className="Switzerland-page">
 
       <h1>SWITZERLAND 🇨🇭</h1>
 

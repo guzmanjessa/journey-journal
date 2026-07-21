@@ -1,382 +1,671 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
-/* ===========================
-   RESET
-=========================== */
+/* ===================================================
+   GLOBAL RESET
+=================================================== */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ===========================
-   BODY
-=========================== */
-
-body {
-  font-family: "Inter", sans-serif;
-  background: #fffaf7;
-  color: #333;
+html{
+    scroll-behavior:smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
 }
 
-.page-root {
-  min-height: 100vh;
+body{
+    font-family:"Inter",sans-serif;
+    background:#fffaf7;
+    color:#333;
+    line-height:1.7;
 }
 
-/* ===========================
-   NAVIGATION
-=========================== */
-
-.site-header {
-  width: 100%;
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+img,
+picture,
+video,
+svg{
+    display:block;
+    max-width:100%;
 }
 
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.8rem;
-  font-weight: 700;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-.site-nav {
-  display: flex;
-  gap: 30px;
+button,
+input,
+textarea{
+    font:inherit;
 }
 
-.site-nav a {
-  text-decoration: none;
-  color: #444;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  transition: 0.3s;
+.page-root{
+    width:100%;
+    min-height:100svh;
+    overflow-x:hidden;
 }
 
-.site-nav a:hover {
-  color: #d9776a;
-}
-
-/* ===========================
+/* ===================================================
    HERO
-=========================== */
+=================================================== */
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 120px 20px 60px;
-  text-align: center;
+/* ===================================================
+   HERO
+=================================================== */
+
+.hero{
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 24px 80px;
+    position:relative;
+    overflow:hidden;
+
+    /* Light background */
+    background: linear-gradient(
+        180deg,
+        #fffaf7 0%,
+        #fdf8f4 100%
+    );
 }
 
-.hero-content {
-  max-width: 850px;
-  width: 100%;
+.hero-content{
+    width:min(850px,100%);
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
-.small-title {
-  display: inline-block;
-  margin-bottom: 20px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #b77d70;
+.small-title{
+    font-size:.85rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#b8896a;
+    font-weight:600;
+    margin-bottom:18px;
 }
 
-.hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 4.2rem;
-  font-weight: 700;
-  color: #2f2f2f;
-  margin-bottom: 30px;
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.8rem,6vw,4.8rem);
+    color:#2d2d2d;
+    line-height:1.15;
+    margin-bottom:22px;
+    text-shadow:none;
 }
 
-/* ===========================
+.hero p{
+    width:min(650px,100%);
+    color:#555;
+    font-size:1.05rem;
+    line-height:1.9;
+    margin-bottom:36px;
+}
+
+
+/* ===================================================
    PROFILE IMAGE
-=========================== */
+=================================================== */
 
-.profile-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 35px;
+.profile-container{
+
+    margin-bottom:34px;
+
 }
 
-.image-frame img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid white;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease;
+.image-frame{
+
+    border-radius:50%;
+
 }
 
-.image-frame img:hover {
-  transform: scale(1.05);
+.image-frame img{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.95);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.18);
+
+    transition:.35s ease;
+
 }
 
-/* ===========================
-   INTRODUCTION
-=========================== */
+.image-frame img:hover{
 
-.hero p {
-  max-width: 760px;
-  margin: 0 auto 40px;
-  font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
-  line-height: 2;
-  color: #555;
-  text-align: justify;
-  text-align-last: center;
+    transform:scale(1.06);
+
 }
 
-/* ===========================
+/* ===================================================
    BUTTONS
-=========================== */
+=================================================== */
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
 }
 
-.btn {
-  text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 999px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
+.btn{
+
+    width:100%;
+
+    max-width:220px;
+
+    min-width:170px;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
 }
 
-.primary {
-  background: #d9776a;
-  color: white;
-  border: none;
+.primary{
+
+    background:#d9776a;
+
+    color:white;
+
 }
 
-.primary:hover {
-  background: #c86356;
-  transform: translateY(-3px);
+.primary:hover{
+
+    background:#c9675b;
+
+    transform:translateY(-4px);
+
 }
 
-.secondary {
-  border: 2px solid #d9776a;
-  color: #d9776a;
-  background: transparent;
+.secondary{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(5px);
+
+    border:2px solid #d9776a;
+
+    color:#d9776a;
+
 }
 
-.secondary:hover {
-  background: #d9776a;
-  color: white;
-  transform: translateY(-3px);
+.secondary:hover{
+
+    background:#d9776a;
+
+    color:white;
+
+    transform:translateY(-4px);
+
 }
 
-/* ===========================
+/* ===================================================
    RESPONSIVE
-=========================== */
+=================================================== */
 
-@media (max-width: 768px) {
+@media(max-width:992px){
 
-  .site-header {
-    flex-direction: column;
-    gap: 15px;
-    padding: 18px;
-  }
+.hero{
 
-  .site-nav {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+padding-top:110px;
 
-  .hero {
-    padding-top: 180px;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    max-width: 100%;
-    padding: 0 15px;
-    font-size: 1rem;
-    line-height: 1.9;
-    text-align: justify;
-    text-align-last: left;
-  }
-
-  .image-frame img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
 }
+
+.hero h1{
+
+font-size:3.3rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+.image-frame img{
+
+width:150px;
+height:150px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+min-height:auto;
+
+padding:110px 20px 70px;
+
+}
+
+.small-title{
+
+font-size:.75rem;
+
+letter-spacing:2px;
+
+}
+
+.hero h1{
+
+font-size:2.3rem;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.image-frame img{
+
+width:120px;
+height:120px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+align-items:center;
+
+}
+
+.btn{
+
+max-width:250px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero{
+
+padding:95px 18px 60px;
+
+}
+
+.hero h1{
+
+font-size:2rem;
+
+}
+
+.hero p{
+
+font-size:14px;
+
+}
+
+.image-frame img{
+
+width:105px;
+height:105px;
+
+}
+
+.btn{
+
+max-width:100%;
+
+}
+}
+/* ===================================================
+   ABOUT PAGE
+=================================================== */
+
 .about-page {
-  min-height: 100vh;
-  padding: 80px 10%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+    width: min(900px, 92%);
+    margin: 0 auto;
+    padding: clamp(60px, 8vw, 90px) 0;
 }
 
 .about-content {
-  width: 600px;
-  text-align: justify;
+    width: 100%;
 }
 
 .about-content h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 50px;
-  margin-bottom: 30px;
-  text-align: left;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    color: #2f2a24;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .about-content p {
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: justify;
+    font-size: clamp(1rem, 2vw, 1.08rem);
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 24px;
+    text-align: justify;
 }
+
+/* ===================================================
+   CONTACT PAGE
+=================================================== */
+
 .contact-page {
-  max-width: 800px;
-  margin: 80px auto;
-  text-align: center;
-  padding: 20px;
+    width: min(1000px, 92%);
+    margin: 0 auto;
+    padding: clamp(60px, 8vw, 90px) 0;
 }
 
 .contact-page h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 42px;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    color: #2f2a24;
+    text-align: center;
+    margin-bottom: 18px;
 }
 
-.contact-page p {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #555;
+.contact-page>p {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+    color: #666;
+    line-height: 1.8;
 }
+
+/* ===================================================
+   CONTACT CARDS
+=================================================== */
 
 .contact-info {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 24px;
+
+    margin-bottom: 50px;
+
 }
 
 .contact-info div {
-  padding: 25px;
-  background: #faf7f2;
-  border-radius: 15px;
+
+    background: white;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.06);
+
+    transition: .3s ease;
+
+}
+
+.contact-info div:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 18px 35px rgba(0,0,0,.10);
+
 }
 
 .contact-info h3 {
-  font-family: "Playfair Display", serif;
-  margin-bottom: 10px;
-  font-size: 22px;
-}
-/* CONTACT PAGE */
 
-.contact-page {
-  max-width: 700px;
-  margin: 80px auto;
-  padding: 20px;
-  text-align: center;
+    font-family: "Playfair Display", serif;
+
+    color: #2f2a24;
+
+    font-size: 1.35rem;
+
+    margin-bottom: 12px;
+
 }
 
-.contact-page h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 42px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+.contact-info p {
+
+    color: #666;
+
+    line-height: 1.7;
+
 }
 
-.contact-page p {
-  font-family: "Inter", sans-serif;
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 40px;
-}
-
-
-/* FORM */
+/* ===================================================
+   CONTACT FORM
+=================================================== */
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
 }
 
 .contact-form label {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 10px;
+
+    font-weight: 600;
+
+    color: #444;
+
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 14px 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  outline: none;
-  background: #faf7f2;
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 14px;
+
+    background: #faf7f2;
+
+    transition: .3s ease;
+
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+
+    border-color: #c7b299;
+
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #b89b72;
+
+    outline: none;
+
+    border-color: #d9776a;
+
+    box-shadow: 0 0 0 4px rgba(217,119,106,.15);
+
 }
 
 .contact-form textarea {
-  resize: none;
+
+    min-height: 180px;
+
+    resize: vertical;
+
 }
 
-
-/* BUTTON */
-
 .contact-form button {
-  margin-top: 20px;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: #2f2a24;
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s;
+
+    width: fit-content;
+
+    padding: 14px 34px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #d9776a;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
 }
 
 .contact-form button:hover {
-  background: #b89b72;
+
+    background: #c9675b;
+
+    transform: translateY(-3px);
+
+}
+
+/* ===================================================
+   TABLET
+=================================================== */
+
+@media (max-width: 992px) {
+
+    .about-page,
+    .contact-page {
+
+        width: 94%;
+
+    }
+
+}
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width: 768px) {
+
+    .about-page,
+    .contact-page {
+
+        width: 92%;
+
+    }
+
+    .about-content h1,
+    .contact-page h1 {
+
+        text-align: center;
+
+        font-size: 2.2rem;
+
+    }
+
+    .about-content p {
+
+        text-align: left;
+
+        font-size: 1rem;
+
+    }
+
+    .contact-page>p {
+
+        font-size: .95rem;
+
+    }
+
+    .contact-info {
+
+        gap: 18px;
+
+    }
+
+    .contact-info div {
+
+        padding: 20px;
+
+    }
+
+    .contact-form button {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ===================================================
+   SMALL PHONES
+=================================================== */
+
+@media (max-width:480px) {
+
+    .about-page,
+    .contact-page {
+
+        width: 90%;
+
+    }
+
+    .about-content h1,
+    .contact-page h1 {
+
+        font-size: 2rem;
+
+    }
+
+    .about-content p {
+
+        font-size: .95rem;
+
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+
+        padding: 14px;
+
+    }
+
 }

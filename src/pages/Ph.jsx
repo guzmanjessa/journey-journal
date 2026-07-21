@@ -5,7 +5,7 @@ import philippines from "../assets/ph.jpg";
 
 function Ph() {
   return (
-    <section className="philippines-page">
+    <section className="Ph-page">
 
       <h1>PHILIPPINES 🇵🇭</h1>
 

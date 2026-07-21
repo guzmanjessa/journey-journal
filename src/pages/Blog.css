@@ -1,18 +1,21 @@
+/* ===========================
+   BLOG PAGE
+=========================== */
+
 .blog-page {
   background: #faf8f5;
   min-height: 100vh;
-  padding: 80px 0;
+  padding: clamp(40px, 6vw, 80px) 0;
 }
 
 .blog-content {
-  max-width: 1200px;
+  width: min(1200px, 92%);
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 .blog-content h1 {
   font-family: "Playfair Display", serif;
-  font-size: 42px;
+  font-size: clamp(2rem, 5vw, 42px);
   font-weight: 600;
   text-align: center;
   color: #2d2d2d;
@@ -29,14 +32,24 @@
   border-radius: 50px;
 }
 
+/* ===========================
+   BLOG CARD
+=========================== */
+
 .blog-card {
   display: flex;
   align-items: center;
-  gap: 60px;
+  justify-content: space-between;
+  gap: 40px;
+
+  width: 100%;
+  overflow: hidden;
+
   margin: 70px 0;
-  background: #ffffff;
-  border-radius: 24px;
   padding: 30px;
+
+  background: #fff;
+  border-radius: 24px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
 }
@@ -47,10 +60,17 @@
 }
 
 .blog-card img {
-  width: 500px;
+  display: block;
+
+  width: 100%;
+  max-width: 500px;
   height: 320px;
+
   object-fit: cover;
+
   border-radius: 20px;
+
+  flex-shrink: 0;
 }
 
 .blog-info {
@@ -59,17 +79,18 @@
 
 .blog-info h2 {
   font-family: "Playfair Display", serif;
-  font-size: 36px;
+  font-size: clamp(2rem, 4vw, 36px);
   color: #2d2d2d;
   margin-bottom: 20px;
 }
 
 .blog-info p {
   font-family: "Inter", sans-serif;
-  font-size: 17px;
+  font-size: clamp(1rem, 2vw, 17px);
   line-height: 1.9;
   color: #666;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .blog-info button {
@@ -78,13 +99,113 @@
   border-radius: 30px;
   background: #b89b72;
   color: white;
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: .3s;
 }
 
 .blog-info button:hover {
   background: #9d805c;
-  transform: translateY(-2px);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+
+  .blog-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .blog-card img {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .blog-info {
+    width: 100%;
+  }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .blog-page {
+    padding: 40px 16px;
+  }
+
+  .blog-content {
+    width: 100%;
+  }
+
+  .blog-card {
+    width: 100%;
+    margin: 30px 0;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 18px;
+
+    border-radius: 18px;
+  }
+
+  .blog-card img {
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+  }
+
+  .blog-info {
+    width: 100%;
+  }
+
+  .blog-info h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .blog-info p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .blog-info button {
+    width: 100%;
+    max-width: none;
+  }
+
+}
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width: 480px) {
+
+  .blog-card img {
+    height: 200px;
+  }
+
+  .blog-info h2 {
+    font-size: 1.5rem;
+  }
+
 }

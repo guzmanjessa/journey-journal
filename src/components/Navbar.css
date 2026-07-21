@@ -1,56 +1,210 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+/* ====================================
+   NAVBAR
+==================================== */
 
 .navbar {
   width: 100%;
-  padding: 30px 10%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 22px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  position: relative;
+  z-index: 1000;
 }
 
-/* Logo */
 .logo {
   font-family: "Playfair Display", serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 600;
   color: #2d2d2d;
   letter-spacing: 1px;
 }
 
-/* Links */
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 35px;
   align-items: center;
 }
 
 .nav-links a {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #333;
   text-decoration: none;
+  color: #333;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
   position: relative;
-  transition: 0.3s ease;
+  transition: .3s;
 }
 
-/* Elegant underline hover */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -8px;
-  width: 0%;
-  height: 1px;
-  background: #333;
-  transition: width 0.3s ease;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #d9776a;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: #d9776a;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-.nav-links a:hover {
-  color: #000;
+/* ====================================
+   HAMBURGER
+==================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(11px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-11px);
+}
+
+/* ====================================
+   TABLET
+==================================== */
+
+@media (max-width:992px){
+
+.navbar{
+
+padding:20px 5%;
+
+}
+
+.nav-links{
+
+gap:22px;
+
+}
+
+}
+
+/* ====================================
+   MOBILE
+==================================== */
+
+@media (max-width:768px){
+
+.hamburger{
+
+display:flex;
+
+}
+
+.navbar{
+
+padding:18px 20px;
+
+}
+
+.nav-links{
+
+position:absolute;
+
+top:100%;
+
+left:0;
+
+width:100%;
+
+background:#fffaf7;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:25px;
+
+padding:25px 0;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transform:scaleY(0);
+
+transform-origin:top;
+
+transition:.3s;
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+.nav-links.show{
+
+transform:scaleY(1);
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+.logo{
+
+font-size:1.8rem;
+
+}
+
+}
+
+/* ====================================
+   SMALL PHONES
+==================================== */
+
+@media (max-width:480px){
+
+.logo{
+
+font-size:1.5rem;
+
+}
+
+.nav-links{
+
+gap:20px;
+
+padding:20px 0;
+
+}
+
+.nav-links a{
+
+font-size:15px;
+
+}
+
 }
